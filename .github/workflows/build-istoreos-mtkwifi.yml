@@ -138,8 +138,8 @@ jobs:
         getconfig=$(cat ${GITHUB_WORKSPACE}/rk35xx/g68_mtk_wifi.config)
         echo "$getconfig" >> openwrt/$CONFIG_FILE
         cat "${GITHUB_WORKSPACE}/configfiles/config-5.10.local" >> openwrt/target/linux/rockchip/rk35xx/config-5.10
-        cat openwrt/.config
-        cat openwrt/target/linux/rockchip/rk35xx/config-5.10
+        # cat openwrt/.config
+        # cat openwrt/target/linux/rockchip/rk35xx/config-5.10
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
