@@ -135,9 +135,9 @@ jobs:
         # cp --preserve=all -r $GITHUB_WORKSPACE/configfiles/userpatches/zhoufuli/* openwrt/
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE_PATH ] && mv $CONFIG_FILE_PATH openwrt/$CONFIG_FILE
-        sed -i -E 's/^(CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_[_a-zA-Z0-9-]+)=y$/# \1 is not set/' openwrt/$CONFIG_FILE
+        sed -i -E 's/^(CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_[_a-zA-Z0-9-]+)=y$/# \1 is not set/' openwrt/.config
         getconfig=$(cat ${GITHUB_WORKSPACE}/rk35xx/g68_mtk_wifi.config)
-        echo "$getconfig" >> openwrt/$CONFIG_FILE
+        echo "$getconfig" >> openwrt/.config
         cat "${GITHUB_WORKSPACE}/configfiles/config-5.10.local" >> openwrt/target/linux/rockchip/rk35xx/config-5.10
         # cat openwrt/.config
         # cat openwrt/target/linux/rockchip/rk35xx/config-5.10
